@@ -120,6 +120,8 @@ public class KeyboardNavigationViewViewManager extends ReactClippingViewManager<
                 targetView.requestFocus();
                 BaseInputConnection up = new BaseInputConnection(targetView, true);
                 up.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
+                View defaultFocus = ReactFindViewUtil.findView(rootView, "defaultFocus");
+                defaultFocus.requestFocus();
                 break;
             case COMMAND_FOCUS:
                 targetView.requestFocus();
